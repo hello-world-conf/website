@@ -299,7 +299,7 @@ jQuery(document).ready(function($) {
 	function createSponsorTierElement(tier) {
 		var tierName = "";
 		
-		switch (tier) {
+		switch (parseInt(tier)) {
 			case 0:
 				tierName = "Gold";
 				break;
