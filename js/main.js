@@ -297,10 +297,21 @@ jQuery(document).ready(function($) {
 	fetchScheduleInformation();
 
 	function createSponsorTierElement(tier) {
+		switch (tier) {
+			case 0:
+				tierName = "Gold";
+				break;
+			case 1:
+				tierName = "Silver";
+				break;
+			case 2:
+				tierName = "Bronze";
+				break;
+		}
 		return `<div class="row">
           <div class="col-lg-4 ">
             <div class="site-section-heading" data-aos="fade-up">
-              <h3 class="text-primary">${tier}</h3>
+              <h3 class="text-primary">${tierName}</h3>
             </div>
           </div>
         </div>`
