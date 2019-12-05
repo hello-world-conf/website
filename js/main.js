@@ -297,6 +297,8 @@ jQuery(document).ready(function($) {
 	fetchScheduleInformation();
 
 	function createSponsorTierElement(tier) {
+		var tierName = "";
+		
 		switch (tier) {
 			case 0:
 				tierName = "Gold";
