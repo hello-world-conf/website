@@ -253,7 +253,7 @@ jQuery(document).ready(function($) {
             <p data-aos="fade-right" data-aos-delay="500">
               Follow ${name.split(" ")[0]} &mdash;
               <a href="${(facebook !== '#' ? 'https://fb.me/' + facebook : '#')}" class="p-2 text-primary"><span class="icon-facebook"></span></a>
-              <a href="${(twitter !== '#' ? 'https://twitter.com/' + twitter : '#')}" class="p-2 text-primary"><span class="icon-twitter"></span></a>
+              ${(twitter !== '#' ? <a href="https://twitter.com/' + twitter" class="p-2 text-primary"><span class="icon-twitter"></span></a>) : &nbsp; ;)}
               <a href="${(github !== '#' ? 'https://github.com/' + github : '#')}" class="p-2 text-primary"><span class="icon-github"></span></a>
             </p>
           </div>
