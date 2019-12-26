@@ -239,7 +239,7 @@ jQuery(document).ready(function($) {
 	};
 	siteDatePicker();
 
-	function createSpeakerElement(name, avatar, bio, title, facebook, twitter, github) {
+	function createSpeakerElement(name, avatar, bio, title, facebook, twitter, github, linkedin) {
 		return `<div class="row align-items-center speaker">
         <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
           <img src="${avatar}" alt="Image" class="img-fluid">
@@ -252,9 +252,10 @@ jQuery(document).ready(function($) {
             </p>
             <p data-aos="fade-right" data-aos-delay="500">
               Follow ${name.split(" ")[0]} &mdash;
-              <a href="${(facebook !== '#' ? 'https://fb.me/' + facebook : '#')}" class="p-2 text-primary"><span class="icon-facebook"></span></a>
-              ${(twitter !== '#' ? <a href="https://twitter.com/' + twitter" class="p-2 text-primary"><span class="icon-twitter"></span></a>) : &nbsp; ;)}
-              <a href="${(github !== '#' ? 'https://github.com/' + github : '#')}" class="p-2 text-primary"><span class="icon-github"></span></a>
+              ${(facebook !== '#') ? "<a href='https://fb.me/" + facebook + "' class='p-2 text-primary'><span class='icon-facebook'></span></a>" : "" }
+              ${(twitter !== '#') ? "<a href='https://twitter.com/" + twitter + "' class='p-2 text-primary'><span class='icon-twitter'></span></a>" : "" }
+              ${(github !== '#') ? "<a href='https://github.com/" + github + "' class='p-2 text-primary'><span class='icon-github'></span></a>" : "" }
+              ${(linkedin !== '#') ? "<a href='https://linkedin.com/in/" + linkedin + "' class='p-2 text-primary'><span class='icon-linkedin'></span></a>" : "" }
             </p>
           </div>
         </div>
@@ -267,7 +268,7 @@ jQuery(document).ready(function($) {
 				$("#speakers").append("<div data-aos=\"fade-up\" data-aos-delay=\"100\"><h3>We'll be announcing our speakers really soon!<br/><br/>Stay tunned for updates.</h3></div>");
 			} else {
 				Object.keys(speakers).forEach((speaker) => {
-					$("#speakers").append(createSpeakerElement(speakers[speaker].name, speakers[speaker].avatar, speakers[speaker].bio, speakers[speaker].title, speakers[speaker].facebook, speakers[speaker].twitter, speakers[speaker].github))
+					$("#speakers").append(createSpeakerElement(speakers[speaker].name, speakers[speaker].avatar, speakers[speaker].bio, speakers[speaker].title, speakers[speaker].facebook, speakers[speaker].twitter, speakers[speaker].github, speakers[speaker].linkedin))
 				})
 			}
 		}, "json" );
