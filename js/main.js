@@ -310,6 +310,9 @@ jQuery(document).ready(function($) {
 			case 2:
 				tierName = "Bronze";
 				break;
+			case 3:
+				tierName = "Media Partners";
+				break;
 		}
 		return `<div class="row">
           <div class="col-lg-4 ">
